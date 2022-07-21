@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Presentation_UPD</string>
+    <string name="floating_description">Adding Person</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="save">Save</string>
+</resources>
