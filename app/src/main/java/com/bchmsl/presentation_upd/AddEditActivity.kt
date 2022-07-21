@@ -23,8 +23,9 @@ class AddEditActivity : AppCompatActivity() {
 
     private fun init() {
         listeners()
-        if (userId == NONE)
-        else editingUser(userId)
+        if (userId != NONE) {
+            editingUser(userId)
+        }
     }
 
     private fun editingUser(id: Int) {
@@ -64,15 +65,14 @@ class AddEditActivity : AppCompatActivity() {
         val email = binding.etEmail.text
         if (checkFields(name, email)) {
             val user = usersList.find { user -> user.id == userId }
-            if (user != null){
+            if (user != null) {
                 val newUser = User(name.toString(), email.toString())
                 newUser.id = user.id
                 usersList[usersList.indexOf(user)] = newUser
                 finish()
-            }else{
+            } else {
                 d("TAG", user.toString())
             }
-
         }
     }
 
@@ -85,6 +85,4 @@ class AddEditActivity : AppCompatActivity() {
         }
         return true
     }
-
-
 }
